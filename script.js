@@ -1,29 +1,45 @@
-// AOS Initialization
-AOS.init({
-    duration: 1000,
-    once: true
-});
+// AOS
+AOS.init({duration:900,once:true});
 
-// Particles.js with accounting theme (numbers, currency-like)
-particlesJS("particles-js", {
+// Particles - subtle accounting theme
+particlesJS('particles-js',
+  {
     "particles": {
-        "number": {"value": 80},
-        "size": {"value": 4},
-        "move": {"speed": 2},
-        "shape": {"type": "circle"},
-        "line_linked": {"enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.3, "width": 1}
+      "number": {"value": 60},
+      "color": {"value": ["#0fb3d1","#ffd166","#ffffff"]},
+      "shape": {"type": "circle"},
+      "opacity": {"value":0.5},
+      "size": {"value":3},
+      "line_linked":{"enable":true,"distance":120,"color":"#0fb3d1","opacity":0.08,"width":1},
+      "move":{"speed":2}
     },
-    "interactivity": {
-        "events": {
-            "onhover": {"enable": true, "mode": "repulse"}
-        }
-    }
+    "interactivity":{"events":{"onhover":{"enable":true,"mode":"repulse"}}}
+  }
+);
+
+// VanillaTilt for cards (auto-applies to elements with data-tilt)
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+  max: 12, speed: 400, glare: true, "max-glare":0.15
 });
 
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+// Hamburger toggle
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.querySelector('.hamburger');
+  var nav = document.querySelector('.main-nav');
+  btn && btn.addEventListener('click', function(){ nav.classList.toggle('open'); nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; });
 });
+
+// Counters
+function animateCounters(){
+  var nums = document.querySelectorAll('.num');
+  nums.forEach(function(el){
+    var target = +el.getAttribute('data-target') || 0;
+    var count = 0;
+    var step = Math.ceil(target / 150);
+    var intv = setInterval(function(){
+      count += step;
+      if(count >= target){ el.textContent = target; clearInterval(intv); } else { el.textContent = count; }
+    }, 20);
+  });
+}
+window.addEventListener('load', animateCounters);

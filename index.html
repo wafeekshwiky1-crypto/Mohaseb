@@ -1,143 +1,113 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محاسب - خدمات محاسبة احترافية</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>محاسب — الصفحة الرئيسية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Header -->
-<header>
-    <nav class="navbar">
-        <div class="logo">📊 محاسب</div>
-        <div class="hamburger">&#9776;</div>
-        <ul class="nav-links">
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<section id="hero">
-    <div class="hero-content">
-        <h1 data-aos="fade-up">خدمات محاسبة احترافية خارجية</h1>
-        <p data-aos="fade-up" data-aos-delay="200">نساعد شركتك على إدارة المحاسبة بكفاءة ودقة عالية.</p>
-        <a href="#contact" class="btn" data-aos="fade-up" data-aos-delay="400">تواصل معنا الآن</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="logo.svg" alt="محاسب" class="logo">
+        <span class="brand-text">محاسب</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">الخدمات</a>
+        <a href="features.html">لماذا نحن</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+      <button class="hamburger" aria-label="فتح القائمة">☰</button>
     </div>
-    <div id="particles-js"></div>
-</section>
+  </header>
 
-<!-- Services Section -->
-<section id="services">
-    <h2 data-aos="fade-right">خدماتنا</h2>
-    <div class="services-container">
-        <div class="service-card" data-aos="zoom-in">
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div id="particles-js" class="particles-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-text" data-aos="fade-up">
+          <h1>حلول محاسبية مبتكرة تسرّع نمو عملك</h1>
+          <p class="lead">دقة، سرعة، وثقة — محاسبة خارجية متكاملة للشركات والمتاجر.</p>
+          <div class="hero-cta">
+            <a href="services.html" class="btn btn-primary">اطّلع على خدماتنا</a>
+            <a href="contact.html" class="btn btn-ghost">تواصل معنا</a>
+          </div>
+        </div>
+        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="200">
+          <!-- illustrative SVG or image -->
+          <svg width="420" height="300" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-illustration" aria-hidden="true">
+            <rect x="10" y="20" width="180" height="220" rx="12" fill="#ffffff" opacity="0.06"/>
+            <rect x="220" y="40" width="180" height="180" rx="12" fill="#ffffff" opacity="0.06"/>
+            <g fill="#fff" opacity="0.95" transform="translate(40,40)">
+              <rect x="0" y="0" width="120" height="18" rx="4" fill="#ffffff" opacity="0.12"/>
+              <rect x="0" y="30" width="100" height="12" rx="3" fill="#ffffff" opacity="0.10"/>
+              <circle cx="150" cy="60" r="18" fill="#ffffff" opacity="0.08"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick services block -->
+    <section class="quick-services" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">خدمات سريعة</h2>
+        <div class="grid grid-3">
+          <div class="card feature-card" data-tilt>
+            <div class="icon">🧾</div>
             <h3>محاسبة كاملة</h3>
-            <p>إدارة جميع عملياتك المحاسبية بشكل دقيق واحترافي.</p>
-        </div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-            <h3>استشارات مالية</h3>
-            <p>تقديم استشارات مالية تساعدك على اتخاذ القرار الأمثل.</p>
-        </div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <p>سجلات دقيقة وفواتير وتقارير دورية منتظمة.</p>
+          </div>
+          <div class="card feature-card" data-tilt>
+            <div class="icon">📈</div>
             <h3>تقارير وتحليلات</h3>
-            <p>تحليلات مفصلة ونتائج دقيقة لمتابعة أداء شركتك.</p>
+            <p>تقارير قابلة للتنفيذ تساعدك باتخاذ القرار.</p>
+          </div>
+          <div class="card feature-card" data-tilt>
+            <div class="icon">💡</div>
+            <h3>استشارات مالية</h3>
+            <p>تحسين استراتيجيات التكاليف والربحية.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / small trust -->
+    <section class="trust" data-aos="fade-up">
+      <div class="container">
+        <div class="trust-inner">
+          <p>مئات العملاء يثقون بنا لإدارة ملفات محاسبتهم بأمان وسرية عالية.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/963945644065" target="_blank" aria-label="واتساب">
+    <span>💬</span>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-footer">
+        <img src="logo.svg" alt="محاسب" class="logo small">
+        <span>محاسب — حلول محاسبية مبتكرة</span>
+      </div>
+      <div class="contact-footer">
+        <a href="mailto:Wafeekshwiky1@gmail.com">Wafeekshwiky1@gmail.com</a>
+        <a href="https://wa.me/963945644065" target="_blank">+963945644065</a>
+      </div>
     </div>
-</section>
+  </footer>
 
-<!-- Contact Section -->
-<form id="contactForm" class="form" method="POST" action="https://formspree.io/f/mqadnwgb">
-  <label>الاسم
-    <input name="name" type="text" required>
-  </label>
-
-  <label>البريد الإلكتروني
-    <input name="email" type="email" required>
-  </label>
-
-  <label>الهاتف
-    <input name="phone" type="tel">
-  </label>
-
-  <label>الخدمة المطلوبة
-    <select name="service">
-      <option>مسك الدفاتر</option>
-      <option>قوائم مالية</option>
-      <option>رواتب</option>
-      <option>استشارات ضريبية</option>
-    </select>
-  </label>
-
-  <label>تفاصيل إضافية
-    <textarea name="message" rows="5"></textarea>
-  </label>
-
-  <div class="form-actions">
-    <button class="btn" type="submit">أرسل الطلب</button>
-    <button class="btn ghost reset" type="button" onclick="document.getElementById('contactForm').reset();">مسح</button>
-  </div>
-
-  <p id="formStatus" class="form-status" aria-live="polite"></p>
-</form>
-
-<script>
-const form = document.getElementById('contactForm');
-const status = document.getElementById('formStatus');
-
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // منع الإرسال الافتراضي
-
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: form.method,
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      status.style.color = 'green';
-      status.innerHTML = 'تم إرسال الطلب بنجاح! سنقوم بالرد عليك قريباً.';
-      form.reset();
-    } else {
-      response.json().then(data => {
-        status.style.color = 'red';
-        if (data.errors) {
-          status.innerHTML = data.errors.map(error => error.message).join(', ');
-        } else {
-          status.innerHTML = 'حدث خطأ أثناء إرسال الطلب.';
-        }
-      })
-    }
-  }).catch(() => {
-    status.style.color = 'red';
-    status.innerHTML = 'حدث خطأ أثناء إرسال الطلب.';
-  });
-});
-</script>
-
-<!-- Footer -->
-<footer>
-    <p>📊 محاسب - جميع الحقوق محفوظة © 2025</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="script.js"></script>
-<script>
-    AOS.init();
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
 </body>
 </html>
