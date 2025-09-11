@@ -8,7 +8,7 @@
 
 body {
     scroll-behavior: smooth;
-    background-color: #f0f4f8;
+    background-color: #f5f7fa;
     color: #333;
 }
 
@@ -17,9 +17,15 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2196f3;
 }
 
 .navbar {
@@ -64,7 +70,22 @@ header {
     position: relative;
     text-align: center;
     color: white;
-    background: linear-gradient(135deg,#00bcd4,#2196f3);
+    background: linear-gradient(135deg,#2196f3,#00bcd4);
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 #hero .hero-content h1 {
@@ -107,7 +128,7 @@ header {
 }
 
 .service-card {
-    background: white;
+    background: #f5f7fa;
     padding: 30px;
     border-radius: 15px;
     width: 300px;
@@ -118,39 +139,6 @@ header {
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-
-/* Team */
-#team {
-    padding: 100px 50px;
-    text-align: center;
-    background: #e3f2fd;
-}
-
-.team-container {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.team-member {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 200px;
-    transition: 0.3s;
-}
-
-.team-member img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.team-member:hover {
-    transform: scale(1.05);
 }
 
 /* Contact */
@@ -171,6 +159,13 @@ header {
     flex: 1;
     min-width: 250px;
     font-size: 1.1rem;
+    text-align: right;
+}
+
+.contact-info a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .contact-form {
@@ -189,6 +184,7 @@ header {
     outline: none;
     width: 100%;
     font-size: 1rem;
+    background: #fff;
 }
 
 .contact-form button {
@@ -225,7 +221,6 @@ footer {
     }
 
     .services-container,
-    .team-container,
     .contact-container {
         flex-direction: column;
         align-items: center;
@@ -281,8 +276,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    .service-card,
-    .team-member {
+    .service-card {
         width: 90%;
     }
 

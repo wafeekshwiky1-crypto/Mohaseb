@@ -4,13 +4,19 @@ AOS.init({
     once: true
 });
 
-// Particles.js
+// Particles.js with accounting theme (numbers, currency-like)
 particlesJS("particles-js", {
     "particles": {
-        "number": {"value": 60},
-        "size": {"value": 3},
+        "number": {"value": 80},
+        "size": {"value": 4},
         "move": {"speed": 2},
-        "line_linked": {"enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1}
+        "shape": {"type": "circle"},
+        "line_linked": {"enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.3, "width": 1}
+    },
+    "interactivity": {
+        "events": {
+            "onhover": {"enable": true, "mode": "repulse"}
+        }
     }
 });
 
