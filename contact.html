@@ -105,34 +105,35 @@
   </form>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // منع الإرسال التقليدي للنموذج
+    // تحديد متغيرات النموذج وظهور رسالة الحالة
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
 
-      const form = document.getElementById('contactForm');
+    // حدث إرسال النموذج
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();  // منع الإرسال التقليدي للنموذج
+
       const formData = new FormData(form);
-      const formStatus = document.getElementById('formStatus');
 
-      // إرسال البيانات عبر fetch إلى Formspree
-      fetch('https://formspree.io/f/mqadnwgb', { // تأكد من وضع عنوان URL الصحيح هنا
+      // إرسال البيانات إلى Formspree باستخدام fetch (AJAX)
+      fetch('https://formspree.io/f/mqadnwgb', { // تأكد من وضع عنوان URL الخاص بـ Formspree
         method: 'POST',
         body: formData
       })
       .then(response => {
-        // تحقق من حالة الاستجابة
         if (response.ok) {
-          return response.json(); // إذا كانت الاستجابة صحيحة، قم بتحويلها إلى JSON
+          return response.json(); // تحويل الاستجابة إلى JSON إذا كانت الاستجابة صحيحة
         }
-        // في حالة وجود خطأ في الاستجابة
         return Promise.reject('حدث خطأ أثناء إرسال رسالتك');
       })
       .then(data => {
-        // إذا كان الإرسال ناجحًا
+        // إذا تم الإرسال بنجاح
         formStatus.textContent = "تم إرسال رسالتك بنجاح. شكرًا لك!";
         formStatus.style.color = "green";
-        form.reset(); // إعادة تعيين النموذج بعد إرسال البيانات
+        form.reset();  // إعادة تعيين النموذج بعد الإرسال بنجاح
       })
       .catch(error => {
-        // عرض رسالة الخطأ في حالة فشل الاتصال أو الاستجابة
+        // عرض رسالة الخطأ في حالة حدوث مشكلة في الاتصال أو الاستجابة
         formStatus.textContent = error || "حدث خطأ أثناء الاتصال بالخادم.";
         formStatus.style.color = "red";
       });
