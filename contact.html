@@ -39,17 +39,22 @@
           <p>⏱ ساعات العمل: من 9 صباحًا حتى 6 مساءً (بتوقيتك المحلي)</p>
         </div>
         <div class="contact-card">
-        
+ 
    <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/mqadnwgb">
-   
- البريد الإلكتروني
+  <label>الاسم
+    <input name="name" type="text" required>
+
+
+  <label>البريد الإلكتروني
     <input name="email" type="email" required>
   </label>
 
+    
   <label>الهاتف
     <input name="phone" type="tel">
   </label>
 
+    
   <label>الخدمة المطلوبة
     <select name="service">
       <option>مسك الدفاتر</option>
@@ -59,6 +64,7 @@
     </select>
   </label>
 
+    
   <label>تفاصيل إضافية
     <textarea name="message" rows="5"></textarea>
   </label>
@@ -70,7 +76,6 @@
 
   <p id="formStatus" class="form-status" aria-live="polite"></p>
 </form>
-
 
         </div>
       </div>
