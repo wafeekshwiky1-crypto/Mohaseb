@@ -113,22 +113,27 @@
       const formStatus = document.getElementById('formStatus');
 
       // إرسال البيانات عبر fetch إلى Formspree
-      fetch(https://formspree.io/f/mqadnwgb, { // عنوان Formspree الخاص بك
+      fetch('https://formspree.io/f/mqadnwgb', { // تأكد من وضع عنوان URL الصحيح هنا
         method: 'POST',
         body: formData
       })
       .then(response => {
+        // تحقق من حالة الاستجابة
         if (response.ok) {
-          formStatus.textContent = "تم إرسال رسالتك بنجاح. شكرًا لك!";
-          formStatus.style.color = "green";
-          form.reset(); // إعادة تعيين النموذج بعد إرسال البيانات
-        } else {
-          formStatus.textContent = "حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى.";
-          formStatus.style.color = "red";
+          return response.json(); // إذا كانت الاستجابة صحيحة، قم بتحويلها إلى JSON
         }
+        // في حالة وجود خطأ في الاستجابة
+        return Promise.reject('حدث خطأ أثناء إرسال رسالتك');
+      })
+      .then(data => {
+        // إذا كان الإرسال ناجحًا
+        formStatus.textContent = "تم إرسال رسالتك بنجاح. شكرًا لك!";
+        formStatus.style.color = "green";
+        form.reset(); // إعادة تعيين النموذج بعد إرسال البيانات
       })
       .catch(error => {
-        formStatus.textContent = "حدث خطأ أثناء الاتصال بالخادم.";
+        // عرض رسالة الخطأ في حالة فشل الاتصال أو الاستجابة
+        formStatus.textContent = error || "حدث خطأ أثناء الاتصال بالخادم.";
         formStatus.style.color = "red";
       });
     });
