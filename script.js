@@ -29,17 +29,42 @@ document.addEventListener('DOMContentLoaded', function(){
   btn && btn.addEventListener('click', function(){ nav.classList.toggle('open'); nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; });
 });
 
-// Counters
+// Counters (for hero and counters page)
 function animateCounters(){
-  var nums = document.querySelectorAll('.num');
+  var nums = document.querySelectorAll('.num, .count');
   nums.forEach(function(el){
+    if (el.dataset.animated) return;
     var target = +el.getAttribute('data-target') || 0;
     var count = 0;
-    var step = Math.ceil(target / 150);
+    var step = Math.max(1, Math.floor(target / 150));
     var intv = setInterval(function(){
       count += step;
-      if(count >= target){ el.textContent = target; clearInterval(intv); } else { el.textContent = count; }
+      if(count >= target){ el.textContent = target; el.dataset.animated = true; clearInterval(intv); } else { el.textContent = count; }
     }, 20);
   });
 }
 window.addEventListener('load', animateCounters);
+
+// Simple SVG calculator "demo" animation: highlight buttons and show calculations on display
+(function(){
+  var display = document.getElementById('calc-display');
+  var btns = Array.from(document.querySelectorAll('#calc-svg .btn-rect'));
+  if(!display || btns.length===0) return;
+  var seq = ['8','+','4','=','12','*','3','=','36','-','6','=','30'];
+  var idx=0;
+  function step(){
+    // clear active
+    btns.forEach(function(b){ b.classList.remove('active'); });
+    // pick a button to highlight (cycle through btns)
+    var b = btns[idx % btns.length];
+    b.classList.add('active');
+    // update display with part of sequence
+    var v = seq[idx % seq.length];
+    display.textContent = v;
+    idx++;
+    if(idx>seq.length*4) idx=0;
+    setTimeout(step, 450);
+  }
+  // start after small delay if SVG present
+  setTimeout(step, 800);
+})();
