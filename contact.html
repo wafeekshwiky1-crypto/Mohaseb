@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>تواصل معنا — محاسب</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>نموذج التواصل</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+    }
+
+    .form {
+      background-color: #fff;
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #0078d4;
+      color: white;
+    }
+
+    .btn.ghost {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .form-status {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="logo.svg" alt="محاسب" class="logo">
-        <span class="brand-text">محاسب</span>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="services.html">الخدمات</a>
-        <a href="contact.html">تواصل معنا</a>
-      </nav>
-      <button class="hamburger" aria-label="فتح القائمة">☰</button>
-    </div>
-  </header>
-  <main>
-    <section class="page-header">
-      <div class="container" data-aos="fade-up">
-        <h1>تواصل معنا</h1>
-        <p class="lead">أرسل لنا رسالة وسنرد سريعًا</p>
-      </div>
-    </section>
-    <section class="contact-section" data-aos="fade-up">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <h3>بيانات التواصل</h3>
-          <p>📧 البريد الإلكتروني: <a href="mailto:Wafeekshwiky1@gmail.com">Wafeekshwiky1@gmail.com</a></p>
-          <p>📱 واتساب: <a href="https://wa.me/963945644065" target="_blank">+963945644065</a></p>
-          <p>⏱ ساعات العمل: من 9 صباحًا حتى 6 مساءً (بتوقيتك المحلي)</p>
-        </div>
-        <div class="contact-card">
- 
-   <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/mqadnwgb">
-   <label>الاسم
+
+  <form id="contactForm" class="form">
+    <label>الاسم
       <input name="name" type="text" required>
     </label>
 
@@ -74,26 +104,35 @@
     <p id="formStatus" class="form-status" aria-live="polite"></p>
   </form>
 
-        </div>
-      </div>
-    </section>
-  </main>
-  <a class="whatsapp-float" href="https://wa.me/963945644065" target="_blank" aria-label="واتساب">
-    <span>💬</span>
-  </a>
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand-footer">
-        <img src="logo.svg" alt="محاسب" class="logo small">
-        <span>محاسب — حلول محاسبية مبتكرة</span>
-      </div>
-      <div class="contact-footer">
-        <a href="mailto:Wafeekshwiky1@gmail.com">Wafeekshwiky1@gmail.com</a>
-        <a href="https://wa.me/963945644065" target="_blank">+963945644065</a>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // منع الإرسال التقليدي للنموذج
+
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+      const formStatus = document.getElementById('formStatus');
+
+      // إرسال البيانات عبر fetch إلى Formspree
+      fetch('https://formspree.io/f/mqadnwgb', { // عنوان Formspree الخاص بك
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          formStatus.textContent = "تم إرسال رسالتك بنجاح. شكرًا لك!";
+          formStatus.style.color = "green";
+          form.reset(); // إعادة تعيين النموذج بعد إرسال البيانات
+        } else {
+          formStatus.textContent = "حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى.";
+          formStatus.style.color = "red";
+        }
+      })
+      .catch(error => {
+        formStatus.textContent = "حدث خطأ أثناء الاتصال بالخادم.";
+        formStatus.style.color = "red";
+      });
+    });
+  </script>
+
 </body>
 </html>
