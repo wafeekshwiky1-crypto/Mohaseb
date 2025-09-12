@@ -41,31 +41,38 @@
         <div class="contact-card">
  
    <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/mqadnwgb">
- الاسم
-    <input name="name" type="text" required>
-     <label>
-البريد الإلكتروني
-    <input name="email" type="email" required>
-     <label>
-الهاتف
-    <input name="phone" type="tel">
-     <label>
-الخدمة المطلوبة
-    <select name="service">
-      <option>مسك الدفاتر</option>
-      <option>قوائم مالية</option>
-      <option>رواتب</option>
-      <option>استشارات ضريبية</option>
-    </select>
-  <label>
-    
-  <div class="form-actions">
-    <button class="btn" type="submit">أرسل الطلب</button>
-    <button class="btn ghost reset" type="button" onclick="document.getElementById('contactForm').reset();">مسح</button>
-  </div>
+   <label>الاسم
+      <input name="name" type="text" required>
+    </label>
 
-  <p id="formStatus" class="form-status" aria-live="polite"></p>
-</form>
+    <label>البريد الإلكتروني
+      <input name="email" type="email" required>
+    </label>
+
+    <label>الهاتف
+      <input name="phone" type="tel">
+    </label>
+
+    <label>الخدمة المطلوبة
+      <select name="service">
+        <option>مسك الدفاتر</option>
+        <option>قوائم مالية</option>
+        <option>رواتب</option>
+        <option>استشارات ضريبية</option>
+      </select>
+    </label>
+
+    <label>تفاصيل إضافية
+      <textarea name="message" rows="5"></textarea>
+    </label>
+
+    <div class="form-actions">
+      <button class="btn" type="submit">أرسل الطلب</button>
+      <button class="btn ghost reset" type="button" onclick="document.getElementById('contactForm').reset();">مسح</button>
+    </div>
+
+    <p id="formStatus" class="form-status" aria-live="polite"></p>
+  </form>
 
         </div>
       </div>
