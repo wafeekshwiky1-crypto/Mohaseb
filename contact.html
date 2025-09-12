@@ -1,72 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>تواصل معنا — محاسب</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محاسب - تواصل معنا</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="logo.svg" alt="محاسب" class="logo">
-        <span class="brand-text">محاسب</span>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="services.html">الخدمات</a>
-        <a href="features.html">لماذا نحن</a>
-        <a href="contact.html">تواصل معنا</a>
-      </nav>
-      <button class="hamburger" aria-label="فتح القائمة">☰</button>
+  <header class="hero small">
+    <div class="logo">
+      <span class="icon">📊</span>
+      <h1>محاسب</h1>
     </div>
+    <h2>تواصل معنا</h2>
   </header>
-  <main>
-    <section class="page-header">
-      <div class="container" data-aos="fade-up">
-        <h1>تواصل معنا</h1>
-        <p class="lead">أرسل لنا رسالة وسنرد سريعًا</p>
-      </div>
-    </section>
-    <section class="contact-section" data-aos="fade-up">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <h3>بيانات التواصل</h3>
-          <p>📧 البريد الإلكتروني: <a href="mailto:Wafeekshwiky1@gmail.com">Wafeekshwiky1@gmail.com</a></p>
-          <p>📱 واتساب: <a href="https://wa.me/963945644065" target="_blank">+963945644065</a></p>
-          <p>⏱ ساعات العمل: من 9 صباحًا حتى 6 مساءً (بتوقيتك المحلي)</p>
-        </div>
-        <div class="contact-card">
-          <h3>أرسل رسالة</h3>
-          <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="اسمك" required>
-            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-            <textarea name="message" rows="6" placeholder="رسالتك" required></textarea>
-            <button type="submit" class="btn btn-primary">إرسال</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-  <a class="whatsapp-float" href="https://wa.me/963945644065" target="_blank" aria-label="واتساب">
-    <span>💬</span>
-  </a>
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand-footer">
-        <img src="logo.svg" alt="محاسب" class="logo small">
-        <span>محاسب — حلول محاسبية مبتكرة</span>
-      </div>
-      <div class="contact-footer">
-        <a href="mailto:Wafeekshwiky1@gmail.com">Wafeekshwiky1@gmail.com</a>
-        <a href="https://wa.me/963945644065" target="_blank">+963945644065</a>
-      </div>
+
+  <section class="contact">
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="الاسم الكامل" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+    <div class="info">
+      <p>📧 Wafeekshwiky1@gmail.com</p>
+      <p>📱 +963945644065</p>
     </div>
+  </section>
+
+  <footer>
+    <p>© 2025 محاسب</p>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
