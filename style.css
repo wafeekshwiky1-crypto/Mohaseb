@@ -102,3 +102,66 @@ body{
   .hamburger{display:block}
   .contact-grid{grid-template-columns:1fr}
 }
+/* تنسيقات قسم أرسل رسالة */
+.contact-form {
+  background: linear-gradient(135deg, #082032, #2C394B);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  color: #fff;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00c6ff;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #d9faff;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #00c6ff;
+  background: #1e2a38;
+  color: #eaf6ff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #00f7ff;
+  background: #263a4d;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00f7ff, #008cff);
+}
