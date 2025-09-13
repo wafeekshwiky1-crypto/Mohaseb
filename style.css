@@ -165,3 +165,49 @@ body{
   transform: scale(1.05);
   background: linear-gradient(135deg, #00f7ff, #008cff);
 }
+/* صندوق الفورم */
+#contactForm {
+  background: #0f172a;         /* خلفية غامقة أنيقة */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  max-width: 500px;
+  margin: auto;
+  color: #fff;
+}
+
+/* الحقول */
+#contactForm input,
+#contactForm textarea,
+#contactForm select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #38bdf8;   /* أزرق فاتح */
+  border-radius: 8px;
+  background: #1e293b;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* الزر */
+#contactForm button {
+  background: #38bdf8;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#contactForm button:hover {
+  background: #0ea5e9;
+}
+
+/* رسالة الحالة */
+#form-status {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
